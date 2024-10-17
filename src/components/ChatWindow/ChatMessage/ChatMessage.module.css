@@ -1,0 +1,160 @@
+.container {
+  display: block;
+  width: 540px;
+  height: 190px;
+  margin-top: 20px;
+  padding-left: 40px;
+  padding-top: 30px;
+  /* background: #ffffff; */
+  border-radius: 6px;
+  outline: none;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+}
+.infoUser {
+  display: flex;
+  width: 464px;
+  padding-left: 22px;
+  padding-right: 38px;
+  justify-content: space-between;
+}
+.nameUser {
+  color: black;
+}
+
+.message {
+  padding-top: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.messageText {
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 26px;
+
+  /* color: #707c97; */
+}
+
+.messageCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  margin-right: 40px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: lowercase;
+
+  color: #ffffff;
+
+  background: #ff3366;
+
+  box-shadow: 4px 4px 15px rgba(198, 27, 74, 0.05),
+    2px 2px 10px rgba(198, 27, 74, 0.1), 1px 1px 50px rgba(198, 27, 74, 0.15);
+}
+
+.nameStatus {
+  display: grid;
+  gap: 6px;
+}
+
+.header div img {
+  border-radius: 50%;
+}
+
+.WhatDo {
+  display: flex;
+}
+.online {
+  position: relative;
+}
+
+.online::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: #00c305;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+}
+
+.item {
+  text-decoration: none;
+  color: #707c97;
+}
+.activClassName {
+  text-decoration: none;
+  position: relative;
+  display: block;
+
+  background: linear-gradient(96.78deg, #7cb8f7 0%, #2a8bf2 100%);
+  border-radius: 6px;
+  color: white;
+  /* color:#2A8BF2; */
+}
+
+.file {
+  width: 110px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  gap: 5px;
+  background: rgba(42, 139, 242, 0.25);
+  color: #2a8bf2;
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: Roboto;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 26px;
+  line-height: 158%;
+}
+.photo {
+  width: 110px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  gap: 5px;
+  background: rgba(255, 51, 102, 0.25);
+  color: #ff3366;
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: Roboto;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 26px;
+  line-height: 158%;
+}
+.document {
+  display: flex;
+  gap: 20px;
+}

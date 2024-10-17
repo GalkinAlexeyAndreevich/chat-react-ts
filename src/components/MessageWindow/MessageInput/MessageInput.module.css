@@ -1,0 +1,83 @@
+.container {
+  /* margin: auto;
+    margin-top: 677px; */
+  /* position: relative; */
+  width: 750px;
+  position: absolute;
+  display: flex;
+  vertical-align: middle;
+  bottom: 30px;
+  margin-left: 53px;
+  border-top: 2px solid rgba(112, 124, 151, 0.15);
+  /* bottom: -300px; */
+}
+
+.body {
+  display: flex;
+  padding-top: 10px;
+  margin: auto;
+  width: 100%;
+  height: 85%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(325.78deg, #2a8bf2 14.76%, #7cb8f7 87.3%);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: 4px 6px 10px 0px #2A8BF226,
+  2px 2px 25px 0px #2A8BF20D,
+  4px 4px 25px 0px #2A8BF226;
+
+}
+
+.btn img {
+  display: block;
+  width: 20px; /* При необходимости можно задать конкретные размеры изображения */
+  height: 20px;
+  object-fit: cover; /* Подстройка изображения внутри кнопки */
+}
+
+.messageInput {
+  margin-left: 20px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.messageInput::placeholder {
+  font-size: 20px;
+  line-height: 23px;
+  color: rgba(112, 124, 151, 0.5);
+}
+
+.messageInput:focus {
+  outline: none;
+}
+
+.smileBtn {
+  display: flex;
+  padding: 0;
+  margin: auto;
+  margin-right: 30px;
+  margin-left: 5px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.smileBtn img {
+  margin: auto;
+}

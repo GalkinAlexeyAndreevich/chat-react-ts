@@ -1,0 +1,16 @@
+.li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    
+}
+nav{
+    padding: 0;
+    margin: 0;
+}
+.list{
+    margin: 0;
+    padding-left: 38px;
+    display: grid;
+    gap: 56px;
+}

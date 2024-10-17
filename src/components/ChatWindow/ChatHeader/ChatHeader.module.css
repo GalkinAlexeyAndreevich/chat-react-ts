@@ -1,0 +1,38 @@
+.button{
+    width: 240px;
+    height: 60px;
+
+    background: linear-gradient(92.68deg, #7CB8F7 0%, #2A8BF2 100%);
+    box-shadow: 6px 6px 25px rgba(42, 139, 242, 0.15), 4px 4px 25px rgba(42, 139, 242, 0.05), 10px 6px 25px rgba(42, 139, 242, 0.15);
+    border-radius: 6px;
+
+    color:white;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+
+    gap: 7px;
+}
+
+.header{
+    display: flex;
+    gap:246px;
+    width: 580px;
+    height: 60px;
+}
+.h{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    color: #0D1C2E;
+}

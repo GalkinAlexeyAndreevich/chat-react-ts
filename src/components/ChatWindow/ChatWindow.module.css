@@ -1,0 +1,37 @@
+.container {
+  width: 600px;
+  margin-top: 109px;
+  margin-left: 59px;
+}
+
+.list {
+  height: 710px;
+  margin-top: 0px;
+  padding: 0;
+  border-radius: 6px;
+  /* overflow: scroll; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.container nav {
+  margin-top: 20px;
+}
+
+/* .list::-webkit-scrollbar-thumb {
+  background: #b7bdcb;
+  border-radius: 10px;
+}
+
+.listItem {
+  list-style-type: none;
+  margin-bottom: 20px;
+} */
+
+/* li{
+  display: grid;
+  gap:0;
+} */
+.listItem {
+  background: white;
+}

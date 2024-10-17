@@ -1,0 +1,28 @@
+.container {
+  background-color: white;
+  display: flex;
+  border-radius: 6px;
+  width: 580px;
+  height: 70px;
+  margin-top: 30px;
+}
+.button {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 41px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #707C97;
+}

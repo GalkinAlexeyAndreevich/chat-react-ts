@@ -35,6 +35,7 @@ function MessageWindow() {
       <MessageHeader
         key={Current.dialog.id_dialog}
         nameUser={Current.secondUser.login}
+        photo={"../userLogo1.1.png"}
       />
       <MessageBody  />
       <MessageInput  />

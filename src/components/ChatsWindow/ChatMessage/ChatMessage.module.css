@@ -17,9 +17,11 @@
 .infoUser {
   display: flex;
   width: 464px;
-  padding-left: 22px;
+  /* padding-left: 22px; */
   padding-right: 38px;
-  justify-content: space-between;
+  align-items: center;
+  gap:20px
+  /* justify-content: space-between; */
 }
 .nameUser {
   color: black;
@@ -35,7 +37,7 @@
   width: 450px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   text-decoration: none;
 
   font-style: normal;
@@ -86,6 +88,7 @@
 
 .WhatDo {
   display: flex;
+  flex-direction: column;
 }
 .online {
   position: relative;
@@ -103,18 +106,14 @@
   border-radius: 10px;
 }
 
-.item {
-  text-decoration: none;
-  color: #707c97;
-}
 .activClassName {
-  text-decoration: none;
+  /* text-decoration: none; */
   position: relative;
   display: block;
 
   background: linear-gradient(96.78deg, #7cb8f7 0%, #2a8bf2 100%);
   border-radius: 6px;
-  color: white;
+  /* color: white; */
   /* color:#2A8BF2; */
 }
 
@@ -158,3 +157,4 @@
   display: flex;
   gap: 20px;
 }
+

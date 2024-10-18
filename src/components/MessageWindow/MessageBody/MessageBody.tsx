@@ -14,7 +14,7 @@ function MessageBody() {
               <img src="../UserLogo2.png" alt="" />
             </div> */}
             <div className={currentUser===item.id_sender?styles.MessageContentYour:styles.MessageContent} >
-              {item.content}
+              <p> {item.content.trim()}</p>
             </div>
           </div>
         );

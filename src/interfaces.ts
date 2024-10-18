@@ -21,7 +21,9 @@ export interface UsersDialog{
   dialog_create:Date;
   dialog_status:number;
   dialog_name:string;
-  id_creator:number
+  id_creator:number;
+  usersDialogs: Dialog[]; 
+  messages:Message[]
 }
 
 export interface Message {
@@ -29,7 +31,7 @@ export interface Message {
   id_dialog: number;
   id_sender: number;
   content: string;
-  message_time: Date
+  message_time: string
   isRead: boolean;
   isDeleted: boolean;
 }
@@ -44,11 +46,13 @@ export interface Dialog {
   id_dialog: number;
   id_user: number;
   id_role: number;
+  user?:User
 }
 
 export interface  DialogInfo {
   dialog: UsersDialog;
   usersDialog: Dialog[];
+  lastMessage?:Message
   secondUser: {
       login: string;
       photo: string | undefined;

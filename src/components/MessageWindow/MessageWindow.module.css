@@ -2,7 +2,25 @@
     position: relative;
     width: 850px;
     height: 880px;
-    margin-top: 110px;
+    margin-top: 10px;
     margin-left: 70px;
     background: white;
 }
+
+/* Стиль для веб-браузеров на основе Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px; /* Ширина скроллбара */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Фон области скроллбара */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0; /* Цвет скроллбара */
+    border-radius: 10px; /* Закругленные углы */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0; /* Цвет при наведении */
+  }

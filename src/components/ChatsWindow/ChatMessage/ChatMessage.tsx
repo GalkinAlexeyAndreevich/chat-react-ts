@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import styles from "./ChatMessage.module.css";
+import { useAppSelector } from "@src/store/hook";
 function online(whatDo:string) {
   if (
     whatDo === "online" ||
@@ -56,8 +57,9 @@ function testPhoto(photo:number) {
   return null;
 }
 interface IProps{
-  href:string;
+  idDialog:number;
   nameUser:string | null;
+  photoUser:string | null;
   whatDo?:string;
   lastMessage?:string;
   messageText?:string;
@@ -66,8 +68,9 @@ interface IProps{
   photo?:number;
 }
 function ChatMessage({
-  href,
+  idDialog,
   nameUser,
+  photoUser,
   whatDo="",
   lastMessage="",
   messageText = "",
@@ -75,33 +78,34 @@ function ChatMessage({
   file = 0,
   photo = 0,
 }:IProps) {
-  console.log(href);
+  const currentDialog = useAppSelector(state=>state.user.currentDialog)
+  const isActive = currentDialog == idDialog
   return (
     <NavLink
-      className={({ isActive }) =>
-        isActive ? `${styles.activClassName}` : styles.item
-      }
-      to={"/" + href}
+      className={ isActive?`${styles.activClassName}` : styles.item}
+      to={"/chat/" + idDialog}
     >
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={online(whatDo)}>
           </div>
           <div className={styles.infoUser}>
+            <div style={{width:'54px', height:'54px'}}>
+              {photoUser &&<img src={photoUser} alt="" />}
+            </div>
             <div className={styles.nameStatus}>
-              <p className={styles.nameUser}>{nameUser}</p>
               <div className={styles.WhatDo}>
-                <img src="" alt="" />
-                <p>{whatDo}</p>
+                <p className={styles.nameUser}>{nameUser}</p>
+                <p style={{color:isActive?'#ffffff':'#2A8BF2'}}>{whatDo}</p>
               </div>
             </div>
-            <p>{lastMessage}</p>
+            <p >{lastMessage}</p>
           </div>
         </div>
 
         <div className={styles.message}>
           <div className={styles.messageContent}>
-            <p className={styles.messageText}>{messageText}</p>
+            <p className={styles.messageText} style={{color:isActive?'#ffffff':'#2A8BF2'}}>{messageText}</p>
             <div className={styles.document}>
               {testFiles(file)}
               {testPhoto(photo)}

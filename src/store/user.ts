@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import {getDialogOnUser,getUsersOnDialog} from "@api/dialog"
+import {getDialogOnUser} from "@api/dialog"
 import { getUser } from "@src/api/user";
 import type { DialogInfo, User } from "@src/interfaces";
 
@@ -11,7 +11,7 @@ interface TypeState {
   currentDialog:number
 }
 const initialState:TypeState = {
-    idCurrentUser:2,
+    idCurrentUser:1,
     userInfo:null,
     dialogs:[],
     currentDialog:0
@@ -61,25 +61,17 @@ export const getDialogsThunk = createAsyncThunk(
     for(const item of dialogs){
       console.log("Зашли в цикл");
       
-      const listUsers =await getUsersOnDialog(item.id_dialog)
+      const listUsers = item.usersDialogs
+      const secondUser = listUsers.find(user=>user.id_user !=id_user)
       console.log("Прошли ли дальше", listUsers,item.dialog_status);
-      
-      let user = null
-      if(Number(item.dialog_status) === 0 && listUsers?.length){
-       
-        for(const item1 of listUsers){
-          if(item1.id_user!==id_user && item1?.id_user){
-              const data = await getUser(item1.id_user)
-              if(data){
-                user = {
-                  login:data.login_user,
-                  photo:data.photo
-                }
-              }
-          }
-        }
+      const user = {
+        login:"",
+        photo:""
       }
-      const obj = {dialog:item,usersDialog:listUsers,secondUser:user}
+      if(secondUser){
+        user.login = secondUser.user?.login_user || ""
+      }
+      const obj = {dialog:item,usersDialog:item.usersDialogs,secondUser:user, lastMessage:item.messages[0]}
       fullInfo.push(obj)    
     }
     console.log("Прошли этап");

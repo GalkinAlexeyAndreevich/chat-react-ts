@@ -1,6 +1,6 @@
 .container {
   width: 600px;
-  margin-top: 109px;
+  margin-top: 10px;
   margin-left: 59px;
 }
 
@@ -9,6 +9,7 @@
   margin-top: 0px;
   padding: 0;
   border-radius: 6px;
+  width: 580px;
   /* overflow: scroll; */
   overflow-y: auto;
   overflow-x: hidden;

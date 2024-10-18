@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { AddMessage, Message } from "@src/interfaces";
 import { addMessage, getMessageOnDialog } from "@src/api/message";
+import { arrMessages } from "@src/testData";
 
 interface TypeState {
   messages: Message[];
@@ -27,6 +28,7 @@ export const getMessagesThunk = createAsyncThunk(
   "message/getMessages",
   async ({ id_dialog }: { id_dialog: number }, { dispatch }) => {
     const messages = await getMessageOnDialog(id_dialog);
+    // messages.push(...arrMessages)
     dispatch(slice.actions.setMessages(messages));
   }
 );

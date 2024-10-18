@@ -1,5 +1,6 @@
 .container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 15px;
   padding: 50px;
   
@@ -10,12 +11,14 @@
 .item {
   display: flex;
   gap: 15px;
+  height: fit-content;
 }
 .itemYour {
   display: flex;
   gap: 15px;
   align-items: center;
   justify-content: right;
+  height: fit-content;
 }
 
 .MessageContent {
@@ -23,8 +26,8 @@
   max-width: 500px;
   word-wrap: break-word;
   gap: 50px;
-  min-width: min-content;
-
+  width: fit-content;
+  height: fit-content;
   padding-left: 22px;
   padding-right: 27px;
   padding-top: 14px;
@@ -42,7 +45,6 @@
   max-width: 500px;
   word-wrap: break-word;
   gap: 50px;
-  min-width: min-content;
 
   padding-left: 22px;
   padding-right: 27px;

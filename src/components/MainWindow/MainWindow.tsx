@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import styles from "./MainWindow.module.css";
 import { useAppDispatch, useAppSelector } from "@src/store/hook";
 import { getDialogsThunk } from "@src/store/user";
-import ChatWindow from "../ChatWindow";
+import ChatWindow from "../ChatsWindow";
 import MessageWindow from "../MessageWindow";
 
 function MainWindow() {

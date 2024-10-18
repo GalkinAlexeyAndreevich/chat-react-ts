@@ -12,9 +12,9 @@ function User(){
  return(
     isLoad?
     <div className={styles.user}>
-        {/* <div className={styles.userPhoto}>
-            <img src={} alt="" />
-        </div> */}
+        <div className={styles.userPhoto}>
+            <img src={"../galkinAlexeyLogo.png"} alt="" />
+        </div>
         
         <p className={styles.nameUser}>{userInfo?userInfo.login_user:"Нет информации о пользователе"}</p>
     </div>:null

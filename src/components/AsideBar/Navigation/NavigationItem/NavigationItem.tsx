@@ -12,15 +12,16 @@ function NavigationItem({ href, label, icon }: RouteInfo) {
     return (
         <div
             onClick={() => {
-                dispatch(getDialogsThunk({ id_user: id_user }));
-                console.log(123);
+                if (href === "/chat") {
+                    dispatch(getDialogsThunk({ id_user }));
+                }
             }}>
             <NavLink
                 className={({ isActive }) =>
                     isActive ? styles.activClassName : styles.item
                 }
                 to={href}>
-                <img src={icon} alt="" /> {label}
+                <img src={icon} alt={`${label} icon`} /> {label}
             </NavLink>
         </div>
     );

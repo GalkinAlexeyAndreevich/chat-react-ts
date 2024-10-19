@@ -2,14 +2,14 @@ import MessageHeader from "./MessageHeader";
 import MessageInput from "./MessageInput";
 import MessageBody from "./MessageBody";
 import { useParams } from "react-router-dom";
-import styles from "./MessageWindow.module.css";
+import styles from "./Messages.module.css";
 import { useAppDispatch, useAppSelector } from "@src/store/hook";
 import { getMessagesThunk } from "@src/store/message";
 import { useEffect } from "react";
 import { userActions } from "@src/store";
 
 
-function MessageWindow() {
+function Messages() {
   const { id } = useParams();
   const dispatch = useAppDispatch()
   useEffect(() => {
@@ -43,4 +43,4 @@ function MessageWindow() {
   );
 }
 
-export default MessageWindow;
+export default Messages;

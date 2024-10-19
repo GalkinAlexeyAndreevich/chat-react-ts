@@ -20,6 +20,5 @@ function AsideBar(){
             <LogOutBtn label={"LOG OUT"} icon={"../power.png"} />
         </aside>
     )
-
 }
 export default AsideBar;

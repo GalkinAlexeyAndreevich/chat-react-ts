@@ -1,7 +1,7 @@
 import ChatHeader from "./ChatHeader";
 import ChatSearch from "./ChatSearch/ChatSearch";
 import ChatMessage from "./ChatMessage";
-import styles from "./ChatsWindow.module.css";
+import styles from "./ChatList.module.css";
 import { useAppDispatch, useAppSelector } from "@src/store/hook";
 import { getMessagesThunk } from "@src/store/message";
 import { userActions } from "@src/store";

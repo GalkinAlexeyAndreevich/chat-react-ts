@@ -11,7 +11,7 @@ interface TypeState {
   currentDialog:number
 }
 const initialState:TypeState = {
-    idCurrentUser:1,
+    idCurrentUser:0,
     userInfo:null,
     dialogs:[],
     currentDialog:0
@@ -32,6 +32,9 @@ const slice = createSlice({
     },
     setUserInfo(state,actions:PayloadAction<User>){
       state.userInfo = actions.payload
+    },
+    setCurrentUser(state,actions:PayloadAction<number>){
+      state.idCurrentUser = actions.payload
     }
   },
 });

@@ -4,11 +4,17 @@ import App from "./App";
 import './index.css';
 import {store} from "@store/index";
 import { Provider } from "react-redux"; 
+import { SocketProvider } from "./context/socketContext";
+import { initAxiosInterceptors } from "./api";
 
-createRoot(document.getElementById('root')!).render(
-  <Provider store={store}>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  </Provider>
-)
+createRoot(document.getElementById("root")!).render(
+    <SocketProvider>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
+    </SocketProvider>
+);
+
+initAxiosInterceptors(store);

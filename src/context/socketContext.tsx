@@ -1,10 +1,10 @@
-import { SERVER_API_URL } from 'config';
-import { createContext, useState, type FC, type ReactNode } from 'react';
+import { SERVER_API_URL } from '@src/config';
+import { createContext, useCallback, useState, type FC, type ReactNode } from 'react';
 import { io, type Socket } from 'socket.io-client';
 
 interface ISocketContext {
   socket: Socket | null;
-  connectSocket: (userId: number) => void;
+  connectSocket: (userId: number) => (() => void);
   disconnectSocket: () => void;
 }
 
@@ -13,8 +13,9 @@ const SocketContext = createContext<ISocketContext | null>(null);
 export const SocketProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
-  const connectSocket = (userId: number) => {
+  const connectSocket = useCallback((userId: number):(() => void) => {
     const newSocket = io(SERVER_API_URL, {
+      transports: ['websocket'],
       query: { userId }, // Передаем userId при подключении
     });
 
@@ -23,14 +24,18 @@ export const SocketProvider: FC<{ children: ReactNode }> = ({ children }) => {
     });
 
     setSocket(newSocket);
-  };
+    return () => {
+      newSocket.disconnect();
+      setSocket(null);
+    };
+  },[setSocket]);
 
-  const disconnectSocket = () => {
+  const disconnectSocket = useCallback(() => {
     if (socket) {
       socket.disconnect();
       setSocket(null);
     }
-  };
+  }, [socket]);
 
   return (
     <SocketContext.Provider value={{ socket, connectSocket, disconnectSocket }}>

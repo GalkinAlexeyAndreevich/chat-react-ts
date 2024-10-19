@@ -1,11 +1,12 @@
 .asideBar {
-    width: 290px;
-    height: 150%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: white;
-    z-index: 100;
+  width: 290px;
+  height: 100vh; /* Make it full screen vertically */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional for better appearance */
 }
 /* .LogOutBtn {
   position: fixed;

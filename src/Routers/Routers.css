@@ -1,0 +1,14 @@
+.main-layout {
+	display: flex;
+	height: 100vh; /* Makes the layout take the full viewport height */
+	width: 100vw;
+}
+
+.main-content {
+	margin-left: 290px; 
+	flex-grow: 1;
+	padding: 20px; 
+	background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
+	width: calc(100% - 290px);
+	overflow-y: auto; 
+}

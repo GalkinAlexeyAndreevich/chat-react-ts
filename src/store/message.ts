@@ -39,9 +39,9 @@ export const addMessageThunk = createAsyncThunk(
     const res = await addMessage({ id_dialog, id_sender, content });
     console.log(id_dialog, id_sender, content, res);
     
-    if (res) {
-      dispatch(getMessagesThunk({ id_dialog }));
-    }
+    // if (res) {
+    //   dispatch(getMessagesThunk({ id_dialog }));
+    // }
   }
 );
 

@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { SERVER_API_URL } from '../config';
-import type { RootState } from '@src/store';
+import type { configureStore } from '@reduxjs/toolkit';
 const api = axios.create({
   baseURL: SERVER_API_URL, // Базовый URL вашего API
 });
 
 
-export const initAxiosInterceptors = (store: RootState) => {
+export const initAxiosInterceptors = (store: ReturnType<typeof configureStore>) => {
   // Интерсептор запросов
   api.interceptors.request.use(
     async (config) => {
@@ -57,7 +57,10 @@ export const initAxiosInterceptors = (store: RootState) => {
           }
         }
       }
-
+      if(error.response.status === 401 && !originalRequest._retry){
+        localStorage.removeItem('token');
+        localStorage.removeItem('refreshToken');
+      }
       return Promise.reject(error);
     }
   );

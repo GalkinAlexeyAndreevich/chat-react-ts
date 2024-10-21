@@ -3,12 +3,13 @@
     margin-top: 677px; */
   /* position: relative; */
   width: 750px;
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   vertical-align: middle;
   bottom: 30px;
   margin-left: 53px;
   border-top: 2px solid rgba(112, 124, 151, 0.15);
+  z-index: 100;
   /* bottom: -300px; */
 }
 

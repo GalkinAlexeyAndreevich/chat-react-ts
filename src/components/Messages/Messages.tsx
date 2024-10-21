@@ -23,7 +23,7 @@ function Messages() {
 
   
   const dialogs = useAppSelector(state=>state.user.dialogs)
-  const Current = dialogs.find((el) => Number(el.dialog.id_dialog) === Number(id));
+  const Current = dialogs.find((el) => Number(el.id_dialog) === Number(id));
   if(!dialogs){
     return <div>Диалоги не найдены</div>
   }
@@ -33,7 +33,7 @@ function Messages() {
   return (
     <div className={styles.container}>
       <MessageHeader
-        key={Current.dialog.id_dialog}
+        key={Current.id_dialog}
         nameUser={Current.secondUser.login}
         photo={"../userLogo1.1.png"}
       />

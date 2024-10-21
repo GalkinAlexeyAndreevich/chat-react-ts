@@ -21,14 +21,14 @@ function ChatWindow() {
           <nav>
               <ul className={styles.list}>
                   {dialogs
-                      ? dialogs.map(({ dialog, secondUser,lastMessage }) => (
+                      ? dialogs.map(({ id_dialog, secondUser,lastMessage }) => (
                             <li
-                                key={dialog.id_dialog}
+                                key={id_dialog}
                                 className={styles.listItem}>
                                 <div
-                                    onClick={() => selectDialog(dialog.id_dialog)}>
+                                    onClick={() => selectDialog(id_dialog)}>
                                     <ChatMessage
-                                        idDialog={dialog.id_dialog}
+                                        idDialog={id_dialog}
                                         nameUser={secondUser?.login || null}
                                         photoUser={"../userLogo1.1.png"}
                                         whatDo={"Пишет"}

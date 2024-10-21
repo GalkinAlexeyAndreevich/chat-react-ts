@@ -49,8 +49,7 @@ export interface Dialog {
   user?:User
 }
 
-export interface  DialogInfo {
-  dialog: UsersDialog;
+export interface  DialogInfo extends UsersDialog {
   usersDialog: Dialog[];
   lastMessage?:Message
   secondUser: {

@@ -1,22 +1,32 @@
 import AsideBar from '@src/components/AsideBar';
 import { useAppSelector } from '@src/store/hook';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import './Routers.css';
 // Lazy loading для страниц
 const AuthPage = React.lazy(() => import('../pages/AuthPage/AuthPage'));
 const ChatPage = React.lazy(() => import('../pages/ChatPage'));
 const PrivateRoute = ({ children }: { children: JSX.Element }) => {
-  const currentUser = useAppSelector((state) => state.user.idCurrentUser);
+  const currentUser = useAppSelector((state) => state.user.idCurrentUser) || Number(localStorage.getItem("currentUser"));
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  if(currentUser){
-    console.log("id пользователя", currentUser);
-    return children
-  }else{
-    console.log("пользователь не найден");
-    navigate('/auth', { replace: true });
-    return null;
+
+  useEffect(() => {
+    if (currentUser !== undefined) {
+      setLoading(false);  // Останавливаем загрузку, как только данные определены
+    }
+    if(!currentUser){
+      navigate('/auth', { replace: true });
+    }
+  }, [currentUser,navigate]);
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
+  if(currentUser){
+    return children
+  }
+  return null
 };
 
 

@@ -1,33 +1,36 @@
 .header {
-  height: 110px;
   display: flex;
-  vertical-align: middle;
+  align-items:center;
   background: #FAFBFF;
   font-family: 'Roboto';
   font-style: normal;
   border-bottom: 2px solid rgba(112, 124, 151, 0.1);
-
+  padding-left: 10px;
+  padding: 28px 20px 28px 60px;
+  gap:10px;
+  color:black;
 }
 
 .person {
   position: relative;
   display: flex;
-  padding: 28px 60px;
+  /* padding: 28px 20px 28px 60px; */
+  align-items:center;
+  width: 100%;
 }
 
 .person img {
-  margin: auto;
-  margin-right: 20px;
   border-radius: 50%;
   width: 54px;
   height: 54px;
 }
 
 .infoUser {
-  width: 676px;
   display: flex;
   justify-content: space-between;
-
+  align-items:center;
+  padding-left: 20px;
+  width: 100%;
 }
 
 .userLogo img {
@@ -45,6 +48,13 @@
   display: flex;
 }
 
+.buttons{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  gap:5px
+} 
+
 .buttons button {
   padding: 0;
   width: 52px;
@@ -55,7 +65,6 @@
   background: #FFFFFF;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.03), 0px 7px 25px rgba(42, 139, 242, 0.03), 0px 5px 25px rgba(42, 139, 242, 0.07);
   cursor: pointer;
-  margin-left: 20px;
 
 }
 
@@ -69,4 +78,18 @@
 
 .WhatDo {
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px 10px 10px;
+  }
+  .person img {
+    width: 44px;
+    height: 44px;
+  }
+  .buttons button {
+    width: 44px;
+    height: 44px;
+  }
 }

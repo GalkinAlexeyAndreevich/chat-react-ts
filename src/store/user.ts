@@ -8,13 +8,15 @@ interface TypeState {
   idCurrentUser:number,
   userInfo:User | null,
   dialogs:DialogInfo[],
-  currentDialog:number
+  currentDialog:number;
+  isAuthenticated:boolean;
 }
 const initialState:TypeState = {
     idCurrentUser:0,
     userInfo:null,
     dialogs:[],
-    currentDialog:0
+    currentDialog:0,
+    isAuthenticated:false
 };
 
 
@@ -59,22 +61,16 @@ export const getUserThunk = createAsyncThunk(
 export const getDialogsThunk = createAsyncThunk(
   "user/getDialogs",
   async ({id_user}:{id_user:number}, { dispatch }) => {
-    console.log(id_user)
     const fullInfo:DialogInfo[]=[]
     const dialogs = await getDialogOnUser(id_user)
-    console.log("проверка диалогов", dialogs);
-    
     if(!dialogs){
       return
     }
-    console.log("Прошли");
-    
-    for(const item of dialogs){
-      console.log("Зашли в цикл");
+    for(let i=0; i<dialogs.length;i++){
+      const item = dialogs[i]
       
-      const listUsers = item.usersDialogs
-      const secondUser = listUsers.find(user=>user.id_user !=id_user)
-      console.log("Прошли ли дальше", listUsers,item.dialog_status);
+      const listUsers = item.usersDialog
+      const secondUser = listUsers.find(user=>user.id_user !=id_user && user.id_user)
       const user = {
         login:"",
         photo:""
@@ -82,14 +78,13 @@ export const getDialogsThunk = createAsyncThunk(
       if(secondUser){
         user.login = secondUser.user?.login_user || ""
       }
-      const obj = {...item,usersDialog:item.usersDialogs,secondUser:user, lastMessage:item.messages[0]}
+      const obj = {...item,secondUser:user, lastMessage:item.messages[0]}
       fullInfo.push(obj)    
     }
-    console.log("Прошли этап");
-    console.log("где консоль", fullInfo);
     dispatch(slice.actions.setDialogs(fullInfo))
   }
 );
 
 export const userReducer = slice.reducer;
 export const userActions = slice.actions;
+

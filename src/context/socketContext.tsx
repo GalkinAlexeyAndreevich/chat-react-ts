@@ -16,6 +16,7 @@ export const SocketProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const connectSocket = useCallback((userId: number):(() => void) => {
     const newSocket = io(SERVER_API_URL, {
       transports: ['websocket'],
+      reconnectionAttempts: 5,
       query: { userId }, // Передаем userId при подключении
     });
 

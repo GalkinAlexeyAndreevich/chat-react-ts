@@ -1,10 +1,9 @@
 .container {
   display: block;
-  width: 540px;
+  width: 440px;
   height: 190px;
-  margin-top: 20px;
   padding-left: 40px;
-  padding-top: 30px;
+  padding-top: 20px;
   /* background: #ffffff; */
   border-radius: 6px;
   outline: none;

@@ -23,8 +23,8 @@
 
 .header{
     display: flex;
-    gap:246px;
-    width: 580px;
+    align-items:center;
+    justify-content: space-between;
     height: 60px;
 }
 .h{

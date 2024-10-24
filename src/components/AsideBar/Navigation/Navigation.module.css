@@ -14,3 +14,11 @@ nav{
     display: grid;
     gap: 56px;
 }
+
+
+
+@media (max-width: 768px) {
+    .list{
+        padding-left:10px
+    }
+}

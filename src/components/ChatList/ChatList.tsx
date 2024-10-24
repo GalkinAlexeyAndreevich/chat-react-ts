@@ -5,15 +5,21 @@ import styles from "./ChatList.module.css";
 import { useAppDispatch, useAppSelector } from "@src/store/hook";
 import { getMessagesThunk } from "@src/store/message";
 import { userActions } from "@src/store";
+import { useMobileDetect } from "@src/hooks/useMobileDetect";
 
 function ChatWindow() {
   const dispatch = useAppDispatch()
   const dialogs = useAppSelector(state=>state.user.dialogs)
+  const currentDialogId = useAppSelector(state=>state.user.currentDialog)
+  const isMobile = useMobileDetect()
   console.log("Диалоги", dialogs);
   const selectDialog = (id_dialog:number) => {
       dispatch(getMessagesThunk({ id_dialog }));
       dispatch(userActions.setCurrentDialog(id_dialog));
   };
+  if(isMobile && currentDialogId){
+    return <div></div>
+  }
   return (
       <div className={styles.container}>
           <ChatHeader />

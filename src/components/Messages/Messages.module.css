@@ -1,12 +1,16 @@
 .container{
     width: 850px;
-    /* height: 800px; */
+    height: 900px;
     margin-top: 10px;
     margin-left: 40px;
     background: white;
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow-y: hidden;
+    flex-grow: 1;
+
 }
 
 /* Стиль для веб-браузеров на основе Webkit (Chrome, Safari, Edge) */
@@ -25,4 +29,14 @@
   
   ::-webkit-scrollbar-thumb:hover {
     background-color: #a0a0a0; /* Цвет при наведении */
+  }
+
+  @media (max-width: 768px) {
+    .container{
+      width: 100dvw;
+      margin: 0;
+      height: 100dvh;
+      /* padding-bottom: 40px; */
+      /* height: calc(100dvh - 10px); */
+    }
   }

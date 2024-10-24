@@ -5,10 +5,17 @@
 }
 
 .main-content {
-	margin-left: 290px; 
 	flex-grow: 1;
 	padding: 20px; 
+	padding-left: 300px; 
 	background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
 	width: calc(100% - 290px);
-	overflow-y: auto; 
+	overflow-y: hidden; 
+}
+
+
+@media (max-width: 768px) {
+	.main-content {
+		padding: 0;
+	}
 }

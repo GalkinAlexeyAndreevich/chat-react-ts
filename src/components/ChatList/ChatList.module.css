@@ -1,18 +1,21 @@
 .container {
   width: 600px;
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .list {
-  height: 710px;
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+  height: calc(100dvh - 300px);
   margin-top: 0px;
   padding: 0;
   border-radius: 6px;
-  width: 580px;
   /* overflow: scroll; */
   overflow-y: auto;
   overflow-x: hidden;
+  padding-right: 6px;
 }
 
 .container nav {
@@ -35,4 +38,12 @@
 } */
 .listItem {
   background: white;
+}
+
+
+@media (max-width: 768px) {
+  .container{
+    padding-top: 20px;
+    width: 94dvw;
+  }
 }

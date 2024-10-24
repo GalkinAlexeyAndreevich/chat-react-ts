@@ -22,7 +22,7 @@ export interface UsersDialog{
   dialog_status:number;
   dialog_name:string;
   id_creator:number;
-  usersDialogs: Dialog[]; 
+  usersDialog: Dialog[]; 
   messages:Message[]
 }
 

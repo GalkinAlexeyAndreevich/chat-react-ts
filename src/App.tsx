@@ -11,12 +11,8 @@ function App() {
 
   useEffect(()=>{
     const localUser = localStorage.getItem("currentUser")
-    const userId = localUser 
-    if(!Number(userId)){
-      localStorage.setItem("currentUser", "1")
-      dispatch(userActions.setCurrentUser(1))
-    }else{
-      dispatch(userActions.setCurrentUser(Number(userId)))
+    if(Number(localUser)){
+      dispatch(userActions.setCurrentUser(Number(localUser)))
     }
   },[dispatch])
   const { connectSocket } = useSocket();

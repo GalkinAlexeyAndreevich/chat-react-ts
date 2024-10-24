@@ -1,17 +1,15 @@
-.user{
-   display: grid; 
-   padding-top: 87px;
-   /* padding-left: 10px; */
-   align-items: center;
-   justify-content: center;
-   gap: 6px;
-}
-.userPhoto{
-    display: grid; 
+.user {
+    display: grid;
+    padding: 80px 0;
     align-items: center;
     justify-content: center;
-    
-    
+    gap: 6px;
+}
+
+.userPhoto {
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -21,13 +19,13 @@ h3,
 h4,
 h5,
 h6,
-p{
+p {
     padding: 0;
     margin: 0;
 }
-.nameUser{
+
+.nameUser {
     font-weight: 600;
-    padding-bottom: 90px;
 
     width: 180px;
     height: 22px;
@@ -42,3 +40,9 @@ p{
 
     color: #0D1C2E;
 }
+
+/* @media (max-width: 768px) {
+    .user{
+        padding: 50px 0;
+    }
+} */

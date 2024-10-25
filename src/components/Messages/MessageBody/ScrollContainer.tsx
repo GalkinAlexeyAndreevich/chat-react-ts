@@ -3,9 +3,11 @@ import styles from "./MessageBody.module.css";
 type Props = {
 	children:React.ReactNode;
 	currentDialog:number;
+  scrollContainerRef:React.MutableRefObject<HTMLDivElement | null>
+  onScroll:()=>void
 }
-const ScrollContainer = ({ children, currentDialog }:Props) => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+const ScrollContainer = ({ children, currentDialog, scrollContainerRef,onScroll }:Props) => {
+  // const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -22,13 +24,13 @@ const ScrollContainer = ({ children, currentDialog }:Props) => {
         }
       }, 100); // Задержка 100 мс
     }
-  }, [currentDialog]);
+  }, [currentDialog,scrollContainerRef]);
 
   const handleScroll = useCallback(() => {
     if (scrollContainerRef.current) {
       localStorage.setItem(`scrollPosition_${currentDialog}`, String(scrollContainerRef.current.scrollTop));
     }
-  },[currentDialog]);
+  },[currentDialog,scrollContainerRef]);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -42,10 +44,10 @@ const ScrollContainer = ({ children, currentDialog }:Props) => {
         scrollContainer.removeEventListener('scroll', handleScroll);
       }
     };
-  }, [handleScroll]);
+  }, [handleScroll,scrollContainerRef]);
 
   return (
-    <div ref={scrollContainerRef} className={styles.container}> {/* Замените maxHeight на желаемую высоту */}
+    <div onScroll={onScroll} ref={scrollContainerRef} className={styles.container}> {/* Замените maxHeight на желаемую высоту */}
       {children}
     </div>
   );

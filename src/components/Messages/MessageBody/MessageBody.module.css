@@ -68,6 +68,22 @@
     10px 10px 50px rgba(42, 139, 242, 0.1); */
   border-radius: 10px 10px 0px 10px;
 }
+.scrollButton {
+  display: flex;
+  position: fixed;
+  bottom: 90px;
+  right: 42px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+.scrollButton:hover {
+  background-color: #0056b3;
+}
 
 @media (max-width: 768px) {
   .container{
@@ -75,4 +91,9 @@
    /* margin-bottom: 70px; */
    /* max-height: calc(100dvh - 10px); */
   }
+  .scrollButton {
+    bottom: 70px;
+    right: 22px;
+  }
 }
+
